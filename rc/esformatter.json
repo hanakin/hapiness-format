@@ -1,7 +1,7 @@
 {
   "indent" : {
     "ReturnStatement": ">=1",
-    "value": "  "
+    "value": "\t"
   },
 
   "lineBreak" : {
@@ -272,7 +272,6 @@
     "esformatter-literal-notation",
     "esformatter-spaced-lined-comment",
     "esformatter-semicolons",
-    "esformatter-semicolon-first",
     "esformatter-jsx"
   ],
 

@@ -3,7 +3,7 @@ var once = require('once')
 var split = require('split')
 var skip = require('skip-stream')
 var reduce = require('stream-reduce')
-var debug = require('debug')('standard-runner')
+var debug = require('debug')('happiness-runner')
 
 function parse (line) {
   debug('parsing line %s', line)
@@ -31,30 +31,32 @@ function highlight (lines, issue) {
 }
 
 function check (data, done) {
-  var standard = spawn('standard')
+  var happiness = spawn('happiness')
   var finish = once(done)
 
-  standard.on('error', finish)
+  happiness.on('error', finish)
 
-  standard.stderr
-  .pipe(split())
-  .pipe(skip(1))
-  .pipe(reduce(function (acc, line) {
-    if (line) {
-      acc.push(parse(line))
-    }
-    return acc
-  }, []))
-  .on('data', function (reports) {
-    debug('reports %j', reports)
-    finish(null, reports)
-  })
+  happiness.stderr
+    .pipe(split())
+    .pipe(skip(1))
+    .pipe(reduce(function (acc, line) {
+      if (line) {
+        acc.push(parse(line))
+      }
+      return acc
+    }, []))
+    .on('data', function (reports) {
+      debug('reports %j', reports)
+      finish(null, reports)
+    })
 
-  standard.stderr.on('end', function () {
+  happiness.stderr.on('end', function () {
     finish(null)
   })
 
-  standard.stdin.end(data)
+  happiness.stdout.on('data', function (data) {})
+
+  happiness.stdin.end(data)
 }
 
 module.exports = check

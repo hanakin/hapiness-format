@@ -5,9 +5,9 @@ var noops = [
   {
     program:
     'var cool =\n' +
-    '  a +\n' +
-    '  b +\n' +
-    '  c\n',
+    '\ta +\n' +
+    '\tb +\n' +
+    '\tc;\n',
 
     msg: 'allow newlines after assignment operator'
   }

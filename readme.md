@@ -1,30 +1,30 @@
 
-# semistandard-format
-  This is a fork of [standard-format](https://github.com/maxogden/standard-format) same concept but with semicolons.
+# happiness-format
+  This is a fork of [semistandard-format](https://github.com/ricardofbarros/semistandard-format) same concept but with semicolons and tabs.
 
 ## Installation
 
   Install with npm
 
-    $ npm install -g semistandard-format
+    $ npm install -g happiness-format
 
 ## Example Usage
 
   Output all formatted javascript in a directory and subdirectories to stdout
 
-    $ semistandard-format
+    $ happiness-format
 
   Format all javascript files, overwriting them into standard format
 
-    $ semistandard-format -w
+    $ happiness-format -w
 
   Format javascript over stdin
 
-    $ semistandard-format < file.js > formatted-file.js
+    $ happiness-format < file.js > formatted-file.js
 
   Format and overwrite specific files
 
-    $ semistandard-format -w file1.js file2.js
+    $ happiness-format -w file1.js file2.js
 
 ### Editor plugins
 

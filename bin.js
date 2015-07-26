@@ -12,7 +12,7 @@ var argv = require('minimist')(process.argv.slice(2), {
   }
 })
 
-// running `standard-format -` is equivalent to `standard-format --stdin`
+// running `happiness-format -` is equivalent to `happiness-format --stdin`
 if (argv._[0] === '-') {
   argv.stdin = true
   argv._.shift()
@@ -20,26 +20,26 @@ if (argv._[0] === '-') {
 
 if (argv.help) {
   console.log(function () {
-  /*
-  standard-format - Auto formatter for the easier cases in standard
+    /*
+    happiness-format - Auto formatter for the easier cases in standard
 
-  Usage:
-      standard-format <flags> [FILES...]
+    Usage:
+        happiness-format <flags> [FILES...]
 
-      If FILES is omitted, then all JavaScript source files (*.js) in the current
-      working directory are checked, recursively.
+        If FILES is omitted, then all JavaScript source files (*.js) in the current
+        working directory are checked, recursively.
 
-      These paths are automatically excluded:
-      node_modules/, .git/, *.min.js, bundle.js
+        These paths are automatically excluded:
+        node_modules/, .git/, *.min.js, bundle.js
 
-  Flags:
-      -v  --version   Show current version.
-      -w  --write     Directly modify input files.
-      -h, --help      Show usage information.
+    Flags:
+        -v  --version   Show current version.
+        -w  --write     Directly modify input files.
+        -h, --help      Show usage information.
 
-  Readme:  https://github.com/maxogden/standard-format
+    Readme:  https://github.com/martinheidegger/hapiness-format
 
-  */
+    */
   }.toString().split(/\n/).slice(2, -2).join('\n'))
   process.exit(0)
 }
@@ -78,7 +78,7 @@ getFiles(function (err, files) {
     try {
       file.data = fmt.transform(file.data)
       processFile(file)
-    } catch (e) {error(file.name + ': ' + e)}
+    } catch (e) {error(file.name + ': ' + e) }
   })
 })
 

@@ -16,10 +16,10 @@ test('test.js ran through formatter', function (t) {
       var highlight = run.highlight(lines, report)
       t.fail(report.message)
       var comment = '\n' +
-                    report.source + ':' +
-                    report.line + ':' +
-                    report.column + ':' +
-                    report.message + highlight
+        report.source + ':' +
+        report.line + ':' +
+        report.column + ':' +
+        report.message + highlight
       console.log(comment)
     })
 

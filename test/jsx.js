@@ -3,14 +3,13 @@ var fmt = require('../').transform
 
 var noops = [
   {
-    program:
-    'export default class Foo extends Component {\n' +
-    '  renderPartial() {\n' +
-    '    return this.props.bar.map((item) => {\n' +
-    '      return <Bar key={item.foo} data={item}/>\n' +
-    '    })\n' +
-    '  }\n' +
-    '}\n',
+    program: 'export default class Foo extends Component {\n' +
+      '\trenderPartial() {\n' +
+      '\t\treturn this.props.bar.map((item) => {\n' +
+      '\t\t\treturn <Bar key={item.foo} data={item}/>;\n' +
+      '\t\t});\n' +
+      '\t}\n' +
+      '}\n',
 
     msg: 'Keep indentation for multiple return statements'
   }

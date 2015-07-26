@@ -2,29 +2,29 @@ var test = require('tape')
 var fmt = require('../').transform
 
 var noops = [
-  { str: 'if (!opts) opts = {}\n',
-    msg: 'Noop on single line conditional assignment' },
+  { str: 'if (!opts) opts = {};\n',
+  msg: 'Noop on single line conditional assignment' },
 
-  { str: 'var g = { name: f, data: fs.readFileSync(f).toString() }\n',
+  { str: 'var g = { name: f, data: fs.readFileSync(f).toString() };\n',
     msg: 'Noop on single line object assignment'
   },
   {
-    str: '{foo: \'bar\'}\n',
+    str: "{foo: 'bar'}\n",
     msg: 'Dont add padding to object braces'
   },
-  { str: "var x = ['test.js', '**test/failing/**']\n",
+  { str: "var x = ['test.js', '**test/failing/**'];\n",
     msg: 'Noop on singleline arrays'
   },
   { str: 'function x () {}\n',
     msg: 'Noop on named functions correctly spaced'
   },
-  { str: 'window.wrapFunctionsUntil(1)\n',
+  { str: 'window.wrapFunctionsUntil(1);\n',
     msg: 'Noop non-functions with function in the name'
   },
-  { str: 'import * as lib from \'lib\'\n',
+  { str: "import * as lib from 'lib';\n",
     msg: 'Noop ES2015 import'
   },
-  { str: 'function* blarg (foo) {yield foo}\n',
+  { str: 'function* blarg (foo) {yield foo;}\n',
     msg: 'Noop ES2015 generator'
   }
 ]
@@ -38,13 +38,13 @@ test('singleline noop expressions', function (t) {
 
 var transforms = [
   {
-    str: 'var x = function() {}\n',
-    expect: 'var x = function () {}\n',
+    str: 'var x = function() {};\n',
+    expect: 'var x = function () {};\n',
     msg: 'Anonymous function spacing between keyword and arguments'
   },
   {
-    str: 'var x = function (y){}\n',
-    expect: 'var x = function (y) {}\n',
+    str: 'var x = function (y){};\n',
+    expect: 'var x = function (y) {};\n',
     msg: 'Anonymous function spacing between arguments and opening brace'
   },
   {
@@ -58,18 +58,18 @@ var transforms = [
     msg: 'Named function spacing between arguments and opening brace'
   },
   {
-    str: 'var     hi =    1\n',
-    expect: 'var hi = 1\n',
+    str: 'var     hi =    1;\n',
+    expect: 'var hi = 1;\n',
     msg: 'Squash spaces around variable value'
   },
   {
-    str: 'var hi           = 1\n',
-    expect: 'var hi = 1\n',
+    str: 'var hi           = 1;\n',
+    expect: 'var hi = 1;\n',
     msg: 'Space after variable name'
   },
   {
-    str: 'var hi\n hi =    1\n',
-    expect: 'var hi\nhi = 1\n',
+    str: 'var hi\n hi =    1;\n',
+    expect: 'var hi;\nhi = 1;\n',
     msg: 'Squash spaces around assignment operator'
   },
   {
@@ -78,23 +78,23 @@ var transforms = [
     msg: 'Space after commas in function parameters'
   },
   {
-    str: 'var array = [1,2,3]\n',
-    expect: 'var array = [1, 2, 3]\n',
+    str: 'var array = [1,2,3];\n',
+    expect: 'var array = [1, 2, 3];\n',
     msg: 'Space after commas in array'
   },
   {
     str: 'var x = 1;\n',
-    expect: 'var x = 1\n',
+    expect: 'var x = 1;\n',
     msg: 'Remove semicolons'
   },
   {
-    str: 'var x = {key:123}\n',
-    expect: 'var x = {key: 123}\n',
+    str: 'var x = {key:123};\n',
+    expect: 'var x = {key: 123};\n',
     msg: 'Space after colon (key-spacing)'
   },
   {
-    str: 'var x = {key : 123}\n',
-    expect: 'var x = {key: 123}\n',
+    str: 'var x = {key : 123};\n',
+    expect: 'var x = {key: 123};\n',
     msg: 'No Space before colon (key-spacing)'
   },
   {
@@ -103,13 +103,13 @@ var transforms = [
     msg: 'Space after if'
   },
   {
-    str: 'var x = 123; // Useful comment\n',
-    expect: 'var x = 123 // Useful comment\n',
+    str: 'var x = 123 // Useful comment\n',
+    expect: 'var x = 123; // Useful comment\n',
     msg: 'Remove unneeded trailing semicolons that are followed by a comment'
   },
   {
-    str: 'var x = 123; /* Useful comment */\n',
-    expect: 'var x = 123 /* Useful comment */\n',
+    str: 'var x = 123 /* Useful comment */\n',
+    expect: 'var x = 123; /* Useful comment */\n',
     msg: 'Remove unneeded trailing semicolons that are followed by a multiline comment'
   }
 ]
