@@ -264,7 +264,11 @@
 
   "jsx": {
     "attrsOnSameLineAsTag": false,
-    "maxAttrsOnTag": 2
+    "maxAttrsOnTag": 2,
+    "htmlOptions": {
+      "indent_char": "\t",
+      "indent_size": 1
+    }
   },
 
   "plugins": [
