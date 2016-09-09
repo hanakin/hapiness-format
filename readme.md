@@ -1,30 +1,30 @@
 
-# happiness-format
-  This is a fork of [semistandard-format](https://github.com/ricardofbarros/semistandard-format) same concept but with semicolons and tabs.
+# sane-format
+  This is a fork of [hapiness-format](https://github.com/martinheidegger/hapiness-format) same concept but with soft 4 space tabs like the rest of the world uses!
 
 ## Installation
 
   Install with npm
 
-    $ npm install -g happiness-format
+    $ npm install -g sane-format
 
 ## Example Usage
 
   Output all formatted javascript in a directory and subdirectories to stdout
 
-    $ happiness-format
+    $ sane-format
 
   Format all javascript files, overwriting them into standard format
 
-    $ happiness-format -w
+    $ sane-format -w
 
   Format javascript over stdin
 
-    $ happiness-format < file.js > formatted-file.js
+    $ sane-format < file.js > formatted-file.js
 
   Format and overwrite specific files
 
-    $ happiness-format -w file1.js file2.js
+    $ sane-format -w file1.js file2.js
 
 ### Editor plugins
 
