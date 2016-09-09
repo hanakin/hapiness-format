@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/martinheidegger/sane-format.git"
+    "url": "https://github.com/hanakin/sane-format.git"
   },
   "author": "michael miday",
   "license": "BSD",
   "bugs": {
-    "url": "https://github.com/martinheidegger/sane-format/issues"
+    "url": "https://github.com/hanakin/sane-format/issues"
   },
-  "homepage": "https://github.com/martinheidegger/sane-format",
+  "homepage": "https://github.com/hanakin/sane-format",
   "dependencies": {
     "deglob": "^1.0.0",
     "esformatter": "^0.8.1",
