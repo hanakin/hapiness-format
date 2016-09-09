@@ -1,24 +1,24 @@
 {
-  "name": "happiness-format",
-  "version": "1.1.0",
-  "description": "attempts to reformat javascript to comply with jedwatson/happiness style",
+  "name": "sane-format",
+  "version": "1.0.0",
+  "description": "attempts to reformat javascript to comply with a sane legible style",
   "main": "index.js",
   "bin": "./bin.js",
   "scripts": {
     "test": "standard && tape test/*.js | tap-spec",
-    "test-file": "<test.js ./bin.js | happiness",
+    "test-file": "<test.js ./bin.js | sane",
     "failing": "standard && tape test/failing/*.js | tap-spec"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/martinheidegger/hapiness-format.git"
+    "url": "https://github.com/martinheidegger/sane-format.git"
   },
-  "author": "max ogden",
+  "author": "michael miday",
   "license": "BSD",
   "bugs": {
-    "url": "https://github.com/martinheidegger/hapiness-format/issues"
+    "url": "https://github.com/martinheidegger/sane-format/issues"
   },
-  "homepage": "https://github.com/martinheidegger/hapiness-format",
+  "homepage": "https://github.com/martinheidegger/sane-format",
   "dependencies": {
     "deglob": "^1.0.0",
     "esformatter": "^0.8.1",
