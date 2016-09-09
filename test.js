@@ -8,159 +8,140 @@
 var x = 1;
 
 // eol whitespace
-x = 2 
+x = 2;
 
 // standard-format has nothing to say about unused vars
 // so this is here to prevent invalid test cases
-console.log(x)
+console.log(x);
 
-//bad comment -- needs a space after slashes
-var test = "what";
+// bad comment -- needs a space after slashes
+var test = 'what';
 
-if(test) {
-  ["a","b","c"].forEach(function (x) { 
-    // test: infix commas
-    console.log(x*2); 
-  })
+if (test) {
+    ['a', 'b', 'c'].forEach(function (x) {
+        // test: infix commas
+        console.log(x * 2);
+    });
 }
 
-var obj = {val: 2}
+var obj = {val: 2};
 var another = { foo: 'bar' }
 
-// space after function name and arg paren
-;[1].forEach(function(){})
+    // space after function name and arg paren;
+    [1].forEach(function () {});
 
 // space after argument paren
-function f2 (x,y,z){}
-function   fooz() {}
-function   foox () {}
-function   foos   () {}
+function f2 (x, y, z) {
+}
+function fooz () {
+}
+function foox () {
+}
+function foos () {
+}
 
-var anon = function() {}
+var anon = function () {};
 
-f2( obj)
-f2(obj )
-f2( obj )
-f2( obj, obj )
-f2( obj,obj )
-fooz()
-foox()
-foos()
-anon(another)
+f2(obj);
+f2(obj);
+f2(obj);
+f2(obj, obj);
+f2(obj, obj);
+fooz();
+foox();
+foos();
+anon(another);
 
-function foo(){}
-function bar() {}
-function quux()  {}
+function foo () {
+}
+function bar () {
+}
+function quux () {
+}
 
+foo();
+bar();
+quux();
 
-foo()
-bar()
-quux()
+function food () {
+}
+function foot () {
+}
 
-
-function food (){}
-function foot ()  {}
-
-
-food()
-foot()
-
+food();
+foot();
 
 // test: no block padding
 var lessThanThreeNewlines = function () {
-
-  return 2;
-}
-lessThanThreeNewlines()
-
-// at most one newline after opening brace
-function noExtraNewlines() {
-
-
-  return 2;
-}
-noExtraNewlines()
+    return 2;
+};
+lessThanThreeNewlines();
 
 // at most one newline after opening brace
-function noExtraSingle() { return 2 }
-noExtraSingle()
+function noExtraNewlines () {
+    return 2;
+}
+noExtraNewlines();
 
 // at most one newline after opening brace
-function noExtraBraces() {
-
-
-  if (noExtraBraces != null) 
-
-  {
-
-    return 42
-  }
-
-  else 
-
-  {
-
-    return 42
-  }
-
-  switch(noExtraBraces) 
-
-  {
-
-  case null:
-    return 42
-  }
-
-  try 
-
-  {
-
-    return 42
-  }
-  catch (e) 
-  
-  {
-  }
-
-  for (var i in noExtraBraces) {
-
-    return i
-  }
+function noExtraSingle () {
+    return 2;
 }
-noExtraBraces()
+noExtraSingle();
 
+// at most one newline after opening brace
+function noExtraBraces () {
+    if (noExtraBraces != null) {
+        return 42;
+    } else {
+        return 42;
+    }
+
+    switch (noExtraBraces) {
+        case null:
+            return 42;
+    }
+
+    try {
+        return 42;
+    } catch (e) {}
+
+    for (var i in noExtraBraces) {
+        return i;
+    }
+}
+noExtraBraces();
 
 // weird bug function
-for (var i = 0 ; i < 42; i++ ) {
+for (var i = 0; i < 42; i++) {
 }
 
 function getRequests (cb) {
-  foo({
-  }, function (err, resp, body) {
-      cb(err, resp, body)
-  })
+    foo({
+    }, function (err, resp, body) {
+        cb(err, resp, body);
+    });
 }
-getRequests()
+getRequests();
 
 // jsx
-var React = require('react')
+var React = require('react');
 
 var testClass = React.createClass({
-  render: function () {
-    return (
-      <div className='testClass'></div>
-    )
-  }
-})
+    render: function () {
+        return (
+        <div className='testClass'></div>
+        );
+    }
+});
 
-module.exports = testClass
+module.exports = testClass;
 
 // spacing around Property names (key-spacing)
 void {
-  testing :123
-}
+    testing: 123
+};
 
 // Test start of line semicolins
-var gloopy = 12
-[1,2,3].map(function () {})
-console.log(gloopy)
+var gloopy = 12[1, 2, 3].map(function () {});
+console.log(gloopy);
