@@ -18,17 +18,19 @@ console.log(x);
 var test = 'what';
 
 if (test) {
-    ['a', 'b', 'c'].forEach(function (x) {
+    var arr1 = ['a', 'b', 'c'];
+    arr1.forEach(function (x) {
         // test: infix commas
         console.log(x * 2);
     });
 }
 
 var obj = {val: 2};
-var another = { foo: 'bar' }
+var another = { foo: 'bar' };
 
-    // space after function name and arg paren;
-    [1].forEach(function () {});
+// space after function name and arg paren;
+var arr2 = [1];
+arr2.forEach(function () {});
 
 // space after argument paren
 function f2 (x, y, z) {
@@ -141,7 +143,3 @@ module.exports = testClass;
 void {
     testing: 123
 };
-
-// Test start of line semicolins
-var gloopy = 12[1, 2, 3].map(function () {});
-console.log(gloopy);
