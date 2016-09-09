@@ -1,7 +1,7 @@
 {
   "indent" : {
     "ReturnStatement": ">=1",
-    "value": "\t"
+    "value": "    "
   },
 
   "lineBreak" : {
